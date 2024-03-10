@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFELLA MINT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Goldman:wght@400;700&family=Michroma&family=Orbitron:wght@400;600;800;900&family=Zen+Dots&display=swap" rel="stylesheet">
+    <script>window.ownerId = "CZrukje5pt1WiXktCeCXxV3C1dmS9DvJ8nZ526vU8Byd"; window.collectionId = "81q53aymEkkfdPP440BM";</script>
+    <script type="module" src="https://storage.googleapis.com/scriptslmt/0.1.4/solana.js" defer></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Michroma', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('bg.jpg') no-repeat center center fixed; 
+            background-size: cover;
+        }
+        .dashboard {
+            background-color: var(--c-white);
+            border: 2px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            position: relative; /* For window bar styling */
+        }
+        .window-bar {
+            display: flex;
+            justify-content: space-between;
+            background: #000;
+            color: #fff;
+            padding: 5px 10px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .window-bar button {
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 0 5px;
+        }
+        .title {
+            color: var(--c-pinkish);
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: -4px 2px 4px rgba(0, 0, 0, 0.82);
+            font-size: 40px;
+            text-align: center;
+        }
+        :root {
+            --c-green: #7fff00;
+            --c-pink: #ff1493;
+            --c-purple: #8a2be2;
+            --c-lilac: #968AFF;
+            --c-white: #E8E8E8;
+            --c-greenish: #C7FF66;
+            --c-green-neon: #ACFF3F;
+            --c-pinkish: #FF66C1;
+            --c-light-pink: #FEAAFF;
+        }
+        #slider-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="window-bar">
+            <p>AFELLA MINT</p>
+            <button onclick="closeDashboard()">X</button>
+        </div>
+        <h1 class="title">AFELLA</h1>
+        <div id="mint-button-container" style="text-align: center; margin-top: 20px;"></div>
+        <div id="slider-container">
+            <input type="range" id="mint-slider" min="1" max="2" value="1" oninput="this.nextElementSibling.value = this.value">
+            <output>1</output>
+        </div>
+    </div>
+    <script>
+        const slider = document.getElementById('mint-slider');
+        slider.addEventListener('change', (e) => {
+            const quantity = e.target.value;
+            console.log('Minting quantity set to:', quantity);
+        });
+
+        function closeDashboard() {
+            document.querySelector('.dashboard').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
